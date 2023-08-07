@@ -9,7 +9,7 @@ namespace Shared.Scripts
             NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         [ServerRpc(RequireOwnership = false)]
-        public void SetDirection(Vector2 direction)
+        public void SetDirection_ServerRpc(Vector2 direction)
         {
             Debug.Log("OnMove");
             this.direction.Value = direction;
