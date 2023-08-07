@@ -21,5 +21,12 @@ namespace Shared.Scripts
                 if (IsClient) PlayerConfigurator.Instance.Configure(this);
             #endif
         }
+        
+        private float speed = 3;
+    
+        private void Update()
+        {
+            transform.parent.Translate(direction.Value * speed * Time.deltaTime);
+        }
     }
 }
