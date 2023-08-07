@@ -26,7 +26,7 @@ namespace Shared.Scripts
     
         private void Update()
         {
-            transform.parent.Translate(direction.Value * speed * Time.deltaTime);
+            transform.Translate(direction.Value * speed * Time.deltaTime);
         }
     }
 }
