@@ -7,9 +7,11 @@ namespace Shared.Scripts
     {
         private NetworkVariable<Vector2> direction = new (default, 
             NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-        
+
+        [ServerRpc(RequireOwnership = false)]
         public void SetDirection(Vector2 direction)
         {
+            Debug.Log("OnMove");
             this.direction.Value = direction;
         }
 
