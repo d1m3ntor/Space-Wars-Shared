@@ -11,6 +11,7 @@ namespace Shared.Scripts
         [ServerRpc]
         public void SetDirection_ServerRpc(Vector2 direction)
         {
+            Debug.Log("OnMove");
             this.direction.Value = direction;
         }
 
