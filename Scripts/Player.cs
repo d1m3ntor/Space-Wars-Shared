@@ -5,14 +5,13 @@ namespace Shared.Scripts
 {
     public class Player : NetworkBehaviour
     {
-        private NetworkVariable<Vector2> direction = new (default, 
-            NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        private Vector2 direction;
 
         [ServerRpc(RequireOwnership = false)]
         public void SetDirection_ServerRpc(Vector2 direction)
         {
             Debug.Log("OnMove");
-            this.direction.Value = direction;
+            this.direction = direction;
         }
 
         public override void OnNetworkSpawn()
@@ -27,7 +26,7 @@ namespace Shared.Scripts
     
         private void Update()
         {
-            transform.Translate(direction.Value * speed * Time.deltaTime);
+            transform.Translate(direction * speed * Time.deltaTime);
         }
     }
 }
