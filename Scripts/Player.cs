@@ -5,7 +5,21 @@ namespace Shared.Scripts
 {
     public class Player : NetworkBehaviour
     {
-        protected NetworkVariable<Vector2> direction = new (default, 
+        private NetworkVariable<Vector2> direction = new (default, 
             NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        [ServerRpc]
+        public void SetDirection_ServerRpc(Vector2 direction)
+        {
+            this.direction.Value = direction;
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+            #if !IS_SERVER 
+                if (IsClient) PlayerConfigurator.Instance.Configure(this);
+            #endif
+        }
     }
 }
