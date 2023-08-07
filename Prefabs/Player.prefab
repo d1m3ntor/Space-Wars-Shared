@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7200526383245148486}
   - component: {fileID: 7301758860294318224}
-  - component: {fileID: 4767581216827597543}
+  - component: {fileID: 525475761541432857}
   m_Layer: 0
   m_Name: Origin
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &4767581216827597543
+--- !u!114 &525475761541432857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7709973165471840967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b29fcb04e3ad85844ab9aa68abc226bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c31cac0a7964520823bbfe509df0b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
